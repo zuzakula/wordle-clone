@@ -54,7 +54,7 @@ const useWordle = (solution: Solution) => {
 
   const handleKeyUp = ({ key }: any) => {
     if (key === "Enter") {
-      if (turn < 5) {
+      if (turn < 6) {
         if (currentGuess.length === 5) {
           if (!history.includes(currentGuess)) {
             const formatedGuess = formatGuess();
