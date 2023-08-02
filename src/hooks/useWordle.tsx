@@ -1,12 +1,6 @@
 import { Solution } from "../App";
 import { useState } from "react";
 
-enum color {
-  grey,
-  yellow,
-  green,
-}
-
 const useWordle = (solution: Solution) => {
   const [guesses, setGuesses] = useState([...Array(6)]);
   const [history, setHistory] = useState<string[]>([]);
@@ -18,27 +12,27 @@ const useWordle = (solution: Solution) => {
     let solutionObj = { ...solution };
     let solutionArr = Object.values(solutionObj);
     let formattedGuess = currentGuess.split("").map((letter) => {
-      return { key: letter, color: color.grey };
+      return { key: letter, color: "grey" };
     });
 
     // turn to green
     formattedGuess.forEach((letter, index) => {
       if (solutionArr[index] === letter.key) {
-        letter.color = color.green;
+        letter.color = "green";
       }
     });
 
     // turn to yellow
     formattedGuess.forEach((letter) => {
-      if (solutionArr.includes(letter.key) && letter.color !== color.green) {
-        letter.color = color.yellow;
+      if (solutionArr.includes(letter.key) && letter.color !== "green") {
+        letter.color = "yellow";
       }
     });
 
     return formattedGuess;
   };
 
-  const newGuess = (formattedGuess: { key: string; color: color }[]) => {
+  const newGuess = (formattedGuess: { key: string; color: string }[]) => {
     currentGuess === solution.word ? setIsCorrect(true) : setIsCorrect(false);
 
     setGuesses((prev) => {
