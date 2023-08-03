@@ -120,3 +120,32 @@ h1 {
     border-color: #282c34;
   }
 }
+
+.keyboard {
+  max-width: 500px;
+  margin: 2em auto;
+}
+
+.keyboard > div {
+  display: inline-block;
+  width: 40px;
+  height: 50px;
+  border: 1px solid #bbb;
+  margin: 4px;
+  text-align: center;
+  line-height: 50px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  border-radius: 30%;
+  background-color: #e0dada;
+}
+
+.keyboard > div.green {
+  background-color: rgb(96, 171, 96);
+  color: white
+}
+
+.keyboard > div.yellow {
+  background-color: rgba(178, 157, 58, 0.87);
+  color: white
+}

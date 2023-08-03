@@ -1,7 +1,4 @@
-const Row = ({ key, guess, currentGuess }: any) => {
-
-    console.log(key)
-
+const Row = ({ guess, currentGuess }: any) => {
   if (guess) {
     return (
       <div className="row past">
@@ -13,17 +10,17 @@ const Row = ({ key, guess, currentGuess }: any) => {
       </div>
     );
   } else if (currentGuess) {
-    let letters = currentGuess.split('');
+    let letters = currentGuess.split("");
     return (
       <div className="row current">
-          {letters.map((letter: any, index: any) => (
-            <div key={index} className="filled">
-              {letter}
-            </div>
-          ))}
-          {[...Array(5 - letters.length)].map((val, index) => (
-            <div key={index}></div>
-          ))}
+        {letters.map((letter: any, index: any) => (
+          <div key={index} className="filled">
+            {letter}
+          </div>
+        ))}
+        {[...Array(5 - letters.length)].map((val, index) => (
+          <div key={index}></div>
+        ))}
       </div>
     );
   }

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Wordle from "./components/Wordle";
+import Keyboard from "./components/Keyboard";
+import useWordle from "./hooks/useWordle";
 
 export interface Solution {
-    id: number,
-    word: string
+  id: number;
+  word: string;
 }
 
 function App() {
@@ -20,7 +22,7 @@ function App() {
       });
   }, [setSolution]);
 
-    return (
+  return (
     <>
       <div className="App">
         <h1>Wordle</h1>
