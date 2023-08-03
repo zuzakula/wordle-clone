@@ -35,6 +35,7 @@ const useWordle = (solution: Solution) => {
 
   const newGuess = (formattedGuess: { key: string; color: string }[]) => {
     currentGuess === solution.word ? setIsCorrect(true) : setIsCorrect(false);
+    console.log(isCorrect)
 
     setGuesses((prev) => {
       let newGuesses = [...prev];
@@ -67,7 +68,7 @@ const useWordle = (solution: Solution) => {
         }
 
         if(letter.color === "grey" && currColor !== "green"){
-          newKeys[letter.key] = "grey"
+          newKeys[letter.key] = "dark-grey"
           return
         }
       })

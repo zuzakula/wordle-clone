@@ -128,15 +128,16 @@ h1 {
 
 .keyboard > div {
   display: inline-block;
-  width: 40px;
-  height: 50px;
+  width: 2em;
+  height: 3em;
   border: 1px solid #bbb;
   margin: 4px;
   text-align: center;
-  line-height: 50px;
+  line-height: 3em;
   text-transform: uppercase;
   font-size: 1.4em;
-  border-radius: 30%;
+  font-weight: bold;
+  border-radius: 35%;
   background-color: #e0dada;
 }
 
@@ -147,5 +148,10 @@ h1 {
 
 .keyboard > div.yellow {
   background-color: rgba(178, 157, 58, 0.87);
+  color: white
+}
+
+.keyboard > div.dark-grey {
+  background-color: #8c8787;
   color: white
 }
